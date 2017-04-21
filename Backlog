@@ -1,0 +1,67 @@
+BACKLOG and STORIES
+1.	Como Arrendador creo un perfil para incorporarme a la red de ITAM Heim Arrendadores.
+a.	Como arrendador voy a ingresar mis datos personales en los campos indicados para poder crear una cuenta en ITAM Heim 
+b.	Como arrendador voy a dar clic en el botón “Registrar” una vez que haya provisto los datos necesarios para la creación de mi perfil.
+2.	Como Arrendador, agrego un inmueble para el beneficio de cualquier arrendatario.
+a.	Como arrendador lleno los campos de “Descripción” y “Precio” para que quien la visite tenga una idea general del inmueble que deseo rentar.
+b.	Como arrendador doy clic en el botón “Adjuntar fotos” para complementar con material visual la descripción de mi inmueble.
+3.	Como Arrendador elimino un inmueble para dejar de rentarlo.
+a.	Como arrendador, accedo al anuncio que coloqué y doy click en “Dar de baja” para indicar que esa propiedad ya no está disponible.  
+b.	Como arrendador, confirmo que deseo eliminar el anuncio  en el mensaje que sale al intentarlo por primera vez para confirmar que no se trata de un error.
+4.	Como Arrendador pongo a disposición de terceros la experiencia obtenida a partir de la relación establecida en el contrato con mi arrendatario para futuras referencias.
+a.	Como arrendador me dispongo a introducir texto en el campo “reseña del arrendatario” para prover mi opinión sobre la persona que ocupó mi inmueble.
+b.	Como arrendador, doy click en “finalizar” para indicar que terminé de escribir y que deseo subir a la página dicha reseña.
+5.	Como Arrendador recibo solicitudes de renta de mi inmueble para elegir a mi arrendatario.
+a.	Como arrendador, reviso las solicitudes de renta para revisar los prospectos de arrendatario que tengo
+b.	Como arrendador, elijo una de las múltiples solicitudes de renta que tengo.
+c.	Como arrendador, reviso cada uno de los perfiles y sus reseñas para elegir al mejor inquilino
+6.	Como Arrendador me pongo en contacto con mi arrendatario para concretar el acuerdo.
+a.	Como arrendador, me llega una notificación de mensaje nuevo, si estoy interesado, le doy click a la notificación y se despliega un menú con los mensajes nuevos.
+b.	Como arrendador, doy click sobre el mensaje nuevo.
+c.	Se abre una nueva vista con un campo para responder al mensaje. Como arrendador, contesto el mensaje y doy click sobre el botón de enviar.
+7.	Como Arrendador recibo el pago de la renta mediante la plataforma por seguridad.
+a.	Como Arrendador reviso mis notificaciones para confirmar que el pago ha sido efectuado de manera exitosa mediante la API de PayPal.  
+8.	Como Arrendador, termino la relación establecida en el contrato con mi arrendatario para tener disponible mi inmueble en la plataforma otra vez.
+a.	Como arrendador, en la lista de propiedades que tengo en renta, doy click a la propiedad que terminará su contrato y se despliega la vista de la propiedad.
+b.	Doy click sobre el botón “finalizar contrato” para terminar la relación con el arrendatario y poner automáticamente disponible para la renta a la propiedad otra vez.
+9.	Como Arrendador doy un descuento en el precio a mi propiedad durante un tiempo limitado para tener más interesados.
+a.	Como arrendador, modifico el precio y la descripción de mi inmueble para hacerle saber a la gente estoy ofreciendo un precio especial durante cierto tiempo.
+b.	Como arrendador doy clic en el botón “actualizar” para guardar los cambios realizados a mi anuncio. 
+10.	Como Arrendador cierro sesión para que nadie use mi cuenta sin mi autorización.
+a.	Como arrendador doy clic en el botón de sesión y hago clic en “cerrar sesión” para que nadie use mi cuenta indebidamente una vez que finalicé mis tareas.
+11.	Como arrendatario creo un perfil para incorporarme a la red de ITAM Heim Arrendatarios.
+a.	Como arrendatario entro a la página principal  y en el menú superior doy click en “registrarse” para abrir la forma de registro.
+b.	Como arrendatario ingreso mis datos en la forma de registro, estos son: nombre, apellidos, correo y clave única.
+c.	Doy click al botón “registrar” para enviar mis datos, el registro está completo.
+12.	Como arrendatario inicio sesión para empezar a buscar lugares.
+a.	Como arrendatario entro a la página principal y en el menú superior doy click en “iniciar sesión” para abrir la forma de inicio de sesión.
+b.	Como arrendatario ingreso mis datos (correo y contraseña) en la forma.
+c.	Doy click en el botón “iniciar sesión” para enviar mis datos y ser redirigido al menú principal. 
+13.	Como arrendatario busco casas o departamentos para encontrar una que se adecúe a mis necesidades.
+a.	Como arrendatario, doy click en el botón del menú llamado “Buscar” y soy redirigido a la página de búsqueda.
+b.	Como arrendatario, ingreso una zona en el campo de buscar, y ajusto los filtros para que se adecúen a mis necesidades.
+c.	Como arrendatario, doy click sobre el botón buscar y analizo los resultados arrojados.
+14.	Como arrendatario me pongo en contacto con un arrendador potencial para llegar a un acuerdo.
+a.	Como arrendatario, desde la vista de la propiedad, doy click sobre el perfil del arrendador para dirijirme a la vista del arrendador.
+b.	Como arrendatario, desde el perfil del arrendador, doy click sobre el botón “enviar mensaje”. Se abre una vista nueva con un campo para escribir un mensaje.
+c.	Como arrendatario, escribo un mensaje diciendo que estoy interesado en rentar su propiedad y doy click sobre el botón enviar.
+15.	Como arrendatario pago la renta de mi departamento para vivir ahí.
+a.	Como arrendatario, me meto a la propiedad que estoy rentando y doy click sobre el botón rentar.
+b.	Una nueva vista se despliega con las opciones de PayPal. Como arrendatario ingreso mi cuenta de usuario y contraseña de PayPal y autorizo el pago.
+16.	Como arrendatario pongo un comentario y una calificación al departamento que renté para que otros usuarios tengan una mejor experiencia.
+a.	Como arrendatario accedo a la vista de la propiedad que renté.
+b.	Como arrendatario doy click sobre el campo de texto que dice “Dejar comentario”.
+c.	Como arrendatario, escribo mi opinión sobre la propiedad que renté y doy click en el botón publicar.
+17.	Como arrendatario puedo marcar algunas propiedades como favoritas para consultarlas más tarde.
+a.	Como arrendatario, accedo a una propiedad que me gusta y quiero guardar para ver después.
+b.	Como arrendatario, doy click sobre la estrella en la esquina superior derecha y la propiedad queda guardada en mis favoritos.
+c.	Como arrendatario, accedo más tarde a mi lista de favoritos al dar click en el menú a la opción “Favoritos”. Ahí puedo ver las propiedades que marqué como favoritas.
+18.	Como arrendatario termino la relación establecida en el contrato con el arrendador para poder rentar otra propiedad.
+a.	Como arrendatario, accedo a la propiedad que estoy rentando.
+b.	Como arrendatario, doy click sobre el botón que dice “Terminar contrato”. Si no tengo adeudos, se termina mi relación con el arrendador.
+19.	Como arrendatario exploro las ofertas temporales para obtener el mejor trato posible.
+a.	Como arrendatario, accedo a la vista de explorar en el menú superior para ver las ofertas disponibles.
+b.	Como arrendatario, encuentro una oferta que me guste y doy click sobre ella. Soy redirigido a la vista de la propiedad con la oferta anunciada.
+20.	Como arrendatario puedo cerrar sesión para tener más seguridad y control sobre mi cuenta de ITAM Heim.
+a.	Como arrendatario, doy click sobre el dropdown en la esquina superior derecha. Se despliega una lista de opciones.
+b.	Como arrendatario, doy click sobre la opción “Cerrar sesión” para cerrar mi cuenta y que nadie pueda modificar algo dentro de ella. 
