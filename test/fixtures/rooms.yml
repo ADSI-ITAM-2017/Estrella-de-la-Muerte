@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  precio: 1
+  ubicacion: MyString
+  lat: 1.5
+  lon: 1.5
+  resena: 
+
+two:
+  precio: 1
+  ubicacion: MyString
+  lat: 1.5
+  lon: 1.5
+  resena: 
