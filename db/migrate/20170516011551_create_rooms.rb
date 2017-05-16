@@ -7,6 +7,7 @@ class CreateRooms < ActiveRecord::Migration[5.1]
       t.float :long
       t.string :ubicacion
       t.string :reseña
+      t.string :propietario
 
       t.timestamps
     end
