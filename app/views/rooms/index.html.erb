@@ -1,1 +1,5 @@
-<h1>Index view</h1>
+<% @rooms.each do |room| %>
+    <h2><%=link_to room.nombre, room_path(room) %></h2>
+<% end %>
+
+<%= link_to "Agregar propiedad", new_room_path %>
