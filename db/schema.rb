@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170515202849) do
+ActiveRecord::Schema.define(version: 20170516011551) do
 
   create_table "rooms", force: :cascade do |t|
-    t.integer "precio"
-    t.string "ubicacion"
-    t.float "lat"
-    t.float "lon"
     t.string "nombre"
-    t.string "resena"
+    t.integer "precio"
+    t.float "lat"
+    t.float "long"
+    t.string "ubicacion"
+    t.string "reseña"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
