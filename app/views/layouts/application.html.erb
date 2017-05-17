@@ -9,6 +9,41 @@
   </head>
 
   <body>
-    <%= yield %>
+
+  <nav  class = "navbar navbar-default">
+
+    <div class = "container">
+
+      <div  class="navbar-header">
+        <%= link_to "ITAM HEIM", root_path, class: "navbar-brand" %>
+      </div>
+
+      <ul class = "nav navbar-nav">
+        <li> <%= link_to "Registrarse", new_usuario_registration_path %> </li>
+        <% if usuario_signed_in? %>
+            <li> <%= link_to "Cerrar sesión", destroy_usuario_session_path, method: :delete%> </li>
+            <% else %>
+            <li><%= link_to "Iniciar sesión", new_usuario_session_path %></li>
+
+        <% end %>
+      </ul>
+
+      <ul class = "nav navbar-nav navbar-right">
+      <% if usuario_signed_in? %>
+            <li><%= link_to "Agregar propiedad", new_room_path  %></li>
+      <% end %>
+      </ul>
+
+    </div>
+
+
+  </nav>
+
+
+  <p class= "notice"><%= notice %></p>
+  <p class= "alert"><%= alert %></p>
+
+
+  <%= yield %>
   </body>
 </html>
