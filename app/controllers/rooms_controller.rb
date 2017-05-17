@@ -10,10 +10,12 @@ class RoomsController < ApplicationController
 
   def new
     @room = current_usuario.rooms.build
+    @categories = Category.all.map{|c| [c.name, c.id]}
   end
 
   def create
     @room = current_usuario.rooms.build(room_params)
+    @room.category_id = params[:category_id]
 
     if @room.save
       redirect_to root_path
@@ -42,7 +44,7 @@ class RoomsController < ApplicationController
   private
 
   def room_params
-    params.require(:room).permit(:nombre, :precio, :lat, :long, :ubicacion, :descripcion)
+    params.require(:room).permit(:nombre, :precio, :lat, :long, :ubicacion, :descripcion, :category_id)
   end
 
   def find_room

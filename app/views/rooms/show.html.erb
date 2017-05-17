@@ -1,6 +1,8 @@
 <h2><%= @room.nombre %> </h2>
-<p> <%= @room.ubicacion %> </p>
+<h3><%= current_usuario.email %></h3>
+<h4>Categoría: <%= @room.category.name %></h4>
 <h5><%= @room.descripcion %></h5>
+<p> <%= @room.ubicacion %> </p>
 <p><%= @room.reseña %></p>
 <%= link_to "Regresar", root_path%>
 
