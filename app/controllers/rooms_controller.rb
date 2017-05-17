@@ -26,9 +26,11 @@ class RoomsController < ApplicationController
   end
 
   def edit
+    @categories = Category.all.map{|c| [c.name, c.id]}
   end
 
   def update
+    @room.category_id = params[:category_id]
     if @room.update(room_params)
       redirect_to rooms_path(@room)
     else

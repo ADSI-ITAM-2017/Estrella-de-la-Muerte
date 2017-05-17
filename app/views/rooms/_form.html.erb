@@ -1,4 +1,4 @@
-<%= simple_form_for @room do  |f|%>
+<%= simple_form_for @room, :html => { :multipart => true} do  |f|%>
     <%= f.input :nombre, label: "Nombre del inmueble" %>
     <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Selecciona una categoría") %>
     <%= f.input :descripcion, label: "Descripción" %>
