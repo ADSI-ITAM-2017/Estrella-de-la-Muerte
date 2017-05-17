@@ -9,11 +9,11 @@ class RoomsController < ApplicationController
   end
 
   def new
-    @room = Room.new
+    @room = current_usuario.rooms.build
   end
 
   def create
-    @room = Room.new(room_params)
+    @room = current_usuario.rooms.build(room_params)
 
     if @room.save
       redirect_to root_path
@@ -28,7 +28,7 @@ class RoomsController < ApplicationController
 
   def update
     if @room.update(room_params)
-      redirect_to rooms_path(room)
+      redirect_to rooms_path(@room)
     else
       render 'edit'
     end
@@ -42,7 +42,7 @@ class RoomsController < ApplicationController
   private
 
   def room_params
-    params.require(:room).permit(:nombre, :precio, :lat, :long, :ubicacion, :descripción, :propietario)
+    params.require(:room).permit(:nombre, :precio, :lat, :long, :ubicacion, :descripcion)
   end
 
   def find_room

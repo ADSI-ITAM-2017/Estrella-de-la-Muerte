@@ -1,11 +1,8 @@
 <%= simple_form_for @room do  |f|%>
-  <%= f.input :nombre, label: "Nombre del inmueble" %>
-  <%= f.input :precio %>
-  <%= f.input :lat %>
-  <%= f.input :long%>
-  <%= f.input :ubicacion%>
-  <%= f.input :reseña%>
-  <%= f.input :propietario%>
-  <%= f.button :submit, label: "Crear inmueble"%>
+    <%= f.input :nombre, label: "Nombre del inmueble" %>
+    <%= f.input :descripcion, label: "Descripción" %>
+    <%= f.input :precio %>
+    <%= f.input :ubicacion%>
+    <%= f.button :submit, label: "Crear inmueble"%>
 <% end %>
 
