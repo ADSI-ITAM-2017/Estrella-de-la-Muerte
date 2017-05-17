@@ -3,6 +3,8 @@
 <%= simple_form_for @room, :html => { :multipart => true} do  |f|%>
     <%= f.input :nombre, label: "Nombre del inmueble" %>
     <%= f.select :category_id, @categories %>
+    <br>
+    <%= f.file_field :room_img %>
     <%= f.input :descripcion, label: "Descripción" %>
     <%= f.input :precio %>
     <%= f.input :ubicacion%>

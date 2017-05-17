@@ -1,6 +1,9 @@
 <%= simple_form_for @room, :html => { :multipart => true} do  |f|%>
     <%= f.input :nombre, label: "Nombre del inmueble" %>
     <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Selecciona una categoría") %>
+    <br><br>
+    <%= f.file_field :room_img %>
+    <br>
     <%= f.input :descripcion, label: "Descripción" %>
     <%= f.input :precio %>
     <%= f.input :ubicacion%>

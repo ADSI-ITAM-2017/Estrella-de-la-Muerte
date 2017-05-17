@@ -52,7 +52,7 @@ class RoomsController < ApplicationController
   private
 
   def room_params
-    params.require(:room).permit(:nombre, :precio, :lat, :long, :ubicacion, :descripcion, :category_id)
+    params.require(:room).permit(:nombre, :precio, :lat, :long, :ubicacion, :descripcion, :category_id, :room_img)
   end
 
   def find_room
