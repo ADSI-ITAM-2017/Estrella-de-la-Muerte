@@ -2,7 +2,13 @@ class RoomsController < ApplicationController
   before_action :find_room, only: [:show, :edit, :update, :destroy]
 
   def index
-    @rooms = Room.all.order("created_at DESC")
+    if params[:category].blank?
+      @rooms = Room.all.order("created_at DESC")
+    else
+      @category_id = Category.find_by(name: params[:category]).id
+      @rooms = Room.where(:category_id=> @category_id).order("created_at DESC")
+    end
+    @rooms2 = Room.where(:category_id=> 1).order("created_at DESC")
   end
 
   def show
