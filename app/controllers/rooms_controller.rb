@@ -23,10 +23,26 @@ class RoomsController < ApplicationController
 
   end
 
+  def edit
+  end
+
+  def update
+    if @room.update(room_params)
+      redirect_to rooms_path(room)
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @room.destroy
+    redirect_to root_path
+  end
+
   private
 
   def room_params
-    params.require(:room).permit(:nombre, :precio, :lat, :long, :ubicacion, :reseña, :propietario)
+    params.require(:room).permit(:nombre, :precio, :lat, :long, :ubicacion, :descripción, :propietario)
   end
 
   def find_room

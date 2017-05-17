@@ -1,4 +1,7 @@
 <h2><%= @room.nombre %> </h2>
 <h2><%= @room.propietario %> </h2>
 <h3> <%= @room.ubicacion %> </h3>
-<h3><%= @room.reseña %></h3>
+<p><%= @room.reseña %></p>
+<%= link_to "Regresar", root_path%>
+<%= link_to "Editar", edit_room_path(@room) %>
+<%= link_to "Eliminar", room_path(@room), method: :delete, data: {confirm: "¿Seguro que deseas eliminar esta propiedad?x"} %>
