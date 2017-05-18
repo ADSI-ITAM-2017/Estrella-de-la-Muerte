@@ -1,11 +1,19 @@
-<h1>Mapa</h1>
+<h1>Búsqueda</h1>
+<ul>
+  <li>Precio</li>
+</ul>
+
+<div id="map"></div>
+
 <style>
   /* Always set the map height explicitly to define the size of the div
    * element that contains the map. */
   #map {
-    height: 80%;
+    height: 92%;
     width: 80%;
     margin-left: 20%;
+    margin-right: 2%;
+    margin-top: -35%;
   }
   /* Optional: Makes the sample page fill the window. */
   html, body {
@@ -13,8 +21,8 @@
     margin: 0;
     padding: 0;
   }
+
 </style>
-<div id="map"></div>
 <script>
     var map;
     function initMap() {
