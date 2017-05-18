@@ -1,36 +1,46 @@
 <div class = "row">
 
-<div class="col-md-4">
+  <div class="col-md-4">
 
 
-<%= image_tag @room.room_img.url(:room_show), class: "room-show" %>
+    <%= image_tag @room.room_img.url(:room_show), class: "room-show" %>
 
-</div>
+  </div>
 
-<div class="col-md-8">
+  <div class="col-md-8">
     <h2><%= @room.nombre %> </h2>
+
     <% if usuario_signed_in? %>
-    <% if @room.usuario_id == current_usuario.id %>
-    <h3><%= current_usuario.first_name %></h3>
-
-
-
+        <% if @room.usuario_id == current_usuario.id %>
+            <h3><%= current_usuario.first_name %></h3>
+        <% end %>
     <% end %>
-<% end %>
 
-<h5><%= @room.descripcion %></h5>
-<p> <%= @room.ubicacion %> </p>
-<p><%= @room.reseña %></p></div>
+    <div class="average-review-rating" data-score="<%= @average_review %>">
+      <label>Calificación promedio</label>
+    </div>
+    <span>Basada en <%= @room.reviews.count %> reseñas</span>
+
+    <h5><%= @room.descripcion %></h5>
+    <p> <%= @room.ubicacion %> </p>
+    <p><%= @room.reseña %></p>
+
+  </div>
+
 </div>
 
-<div>
 
-  <div class = "row">
-    <div class = "col-md-4">
+<div class = "row">
+  <div class = "col-md-4">
 
-      <!-- Rese;as y calificaciones -->
+    <%= render @room.reviews %>
 
+    <!-- Rese;as y calificaciones -->
+    <div>
+      <%= link_to "Agregar reseña", new_room_review_path(@room)%>
     </div>
+
+  </div>
 
 </div>
 
@@ -38,11 +48,33 @@
 
 <% if usuario_signed_in? %>
 
-  <% if @room.usuario_id == current_usuario.id %>
+    <% if @room.usuario_id == current_usuario.id %>
 
-    <%= link_to "Editar", edit_room_path(@room) %>
-    <%= link_to "Eliminar", room_path(@room), method: :delete, data: {confirm: "¿Seguro que deseas eliminar esta propiedad?"} %>
+        <%= link_to "Editar", edit_room_path(@room) %>
+        <%= link_to "Eliminar", room_path(@room), method: :delete, data: {confirm: "¿Seguro que deseas eliminar esta propiedad?"} %>
 
     <% end %>
 
 <% end %>
+
+
+<script>
+    $('.review-rating').raty({
+        readOnly:true,
+        score: function(){
+            return $(this).attr('data-score');
+        },
+        path: '/assets/'
+    });
+</script>
+
+<script>
+    $('.average-review-rating').raty({
+        readOnly:true,
+        score: function(){
+            return $(this).attr('data-score');
+        },
+        path: '/assets/'
+    });
+
+</script>

@@ -1,0 +1,15 @@
+<%= simple_form_for([@room, @room.reviews.build]) do |f|%>
+    <div id="rating-form">
+      <label>Calificación</label>
+    </div>
+    <%= f.input :comment %>
+    <%= f.button :submit %>
+
+<% end %>
+
+<script>
+    $('#rating-form').raty({
+        path: '/assets/',
+        scoreName: 'review[rating]'
+    });
+</script>

@@ -14,6 +14,11 @@ class RoomsController < ApplicationController
   end
 
   def show
+    if @room.reviews.blank?
+      @average_review = 0
+    else
+      @average_review = @room.reviews.average(:rating).round(2)
+    end
   end
 
   def new
@@ -54,7 +59,8 @@ class RoomsController < ApplicationController
   private
 
   def room_params
-    params.require(:room).permit(:nombre, :precio, :lat, :long, :ubicacion, :descripcion, :category_id, :room_img)
+    params.require(:room).permit(:nombre, :precio, :lat, :long, :ubicacion, :descripcion,
+                                 :category_id, :room_img)
   end
 
   def find_room
