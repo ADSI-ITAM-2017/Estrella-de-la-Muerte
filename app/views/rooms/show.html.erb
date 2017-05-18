@@ -8,52 +8,53 @@
   </div>
 
   <div class="col-md-8">
-    <h1><%= @room.nombre %> </h1>
 
-    <h2><%= link_to "#{@usuario.first_name} " + "#{@usuario.last_name}", new_room_review_path(@room) %></h2>
-
-
-    <div class="average-review-rating" data-score="<%= @average_review %>">
-      <label>Calificación promedio</label>
+    <div class="room-info">
+      <h2 class ="room-nombre"><%= @room.nombre %> </h2>
+      <h3 class="room-propietario"><span>Propietario: </span><%= link_to "#{@usuario.first_name} " + "#{@usuario.last_name}", new_room_review_path(@room) %></h3>
+      <h2 class="avg-rating"><label>Calificación promedio</label></h2>
+      <div class="average-review-rating" data-score="<%= @average_review %>"></div>
+      <span class="number-of-reviews">Basada en <%= @room.reviews.count %> reseñas</span>
+      <p class="room-desc"><%= @room.descripcion %></p>
+      <p> <%= @room.ubicacion %> </p>
+      <p><%= @room.reseña %></p>
     </div>
-    <span>Basada en <%= @room.reviews.count %> reseñas</span>
-
-    <h5><%= @room.descripcion %></h5>
-    <p> <%= @room.ubicacion %> </p>
-    <p><%= @room.reseña %></p>
-
   </div>
 
 </div>
 
 
 <div class = "row">
+
   <div class = "col-md-4">
 
-    <%= render @room.reviews %>
-
-    <!-- Rese;as y calificaciones -->
-    <div>
-      <%= link_to "Agregar reseña", new_room_review_path(@room)%>
+    <div class = "reviews">
+    <h1>Reseñas</h1>
+      <%= render @room.reviews %>
+        <div>
+        <%= link_to "Agregar reseña", new_room_review_path(@room), class: "btn-custom"%>
+      </div>
     </div>
 
   </div>
 
 </div>
 
-<%= link_to "Regresar", root_path%>
+<div class="links btn-group">
+
+<%= link_to "Regresar", root_path, class: "btn btn-custom"%>
 
 <% if usuario_signed_in? %>
 
     <% if @room.usuario_id == current_usuario.id %>
 
-        <%= link_to "Editar", edit_room_path(@room) %>
-        <%= link_to "Eliminar", room_path(@room), method: :delete, data: {confirm: "¿Seguro que deseas eliminar esta propiedad?"} %>
+        <%= link_to "Editar", edit_room_path(@room) , class: "btn btn-custom"%>
+        <%= link_to "Eliminar", room_path(@room), method: :delete, data: {confirm: "¿Seguro que deseas eliminar esta propiedad?"} , class: "btn btn-custom"%>
 
     <% end %>
 
 <% end %>
-
+</div>
 
 <script>
     $('.review-rating').raty({
