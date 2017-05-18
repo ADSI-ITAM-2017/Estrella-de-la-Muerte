@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resources :rooms
   root 'rooms#index'
   devise_for :usuarios, :controllers => { registrations: 'registrations' }
+  get '/map' => 'map#index'
 end

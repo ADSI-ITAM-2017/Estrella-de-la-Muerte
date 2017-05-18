@@ -18,7 +18,7 @@
         <%= link_to "ITAM HEIM", root_path, class: "navbar-brand" %>
       </div>
 
-      <ul class = "nav navbar-nav">
+      <ul class = "nav navbar-nav navbar-right">
         <li> <%= link_to "Registrarse", new_usuario_registration_path %> </li>
         <% if usuario_signed_in? %>
             <li> <%= link_to "Cerrar sesión", destroy_usuario_session_path, method: :delete%> </li>
@@ -28,7 +28,9 @@
         <% end %>
       </ul>
 
-      <ul class = "nav navbar-nav navbar-right">
+      <ul class = "nav navbar-nav">
+
+        <li><%= link_to "Buscar", map_path %></li>
 
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -45,6 +47,7 @@
       <% if usuario_signed_in? %>
             <li><%= link_to "Agregar propiedad", new_room_path  %></li>
       <% end %>
+
       </ul>
 
     </div>
