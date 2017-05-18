@@ -8,13 +8,10 @@
   </div>
 
   <div class="col-md-8">
-    <h2><%= @room.nombre %> </h2>
+    <h1><%= @room.nombre %> </h1>
 
-    <% if usuario_signed_in? %>
-        <% if @room.usuario_id == current_usuario.id %>
-            <h3><%= current_usuario.first_name %></h3>
-        <% end %>
-    <% end %>
+    <h2><%= link_to "#{@usuario.first_name} " + "#{@usuario.last_name}", new_room_review_path(@room) %></h2>
+
 
     <div class="average-review-rating" data-score="<%= @average_review %>">
       <label>Calificación promedio</label>

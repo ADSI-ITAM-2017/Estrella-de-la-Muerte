@@ -1,5 +1,6 @@
 class RoomsController < ApplicationController
   before_action :find_room, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_usuario!, only: [:new, :edit]
 
   def index
     if params[:category].blank?
@@ -11,9 +12,11 @@ class RoomsController < ApplicationController
     @rooms1 = Room.where(:category_id=> 1).order("created_at DESC")
     @rooms2 = Room.where(:category_id=> 2).order("created_at DESC")
     @rooms3 = Room.where(:category_id=> 3).order("created_at DESC")
+    @mejoresPrecios = Room.where('precio <= ?',30000).order("precio DESC")
   end
 
   def show
+    @usuario = Usuario.find_by(id: @room.usuario_id)
     if @room.reviews.blank?
       @average_review = 0
     else

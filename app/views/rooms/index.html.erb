@@ -40,6 +40,18 @@
     <% end %>
     </div>
 
+    <hr>
+    <h1>Mejores Precios</h1>
+    <div class ="row">
+      <% @mejoresPrecios.each do |propiedad| %>
+          <div class = "col-md-3">
+            <a href="/rooms/<%=propiedad.id %>">
+              <%=image_tag propiedad.room_img.url(:room_index),class: "room" %>
+            </a>
+          </div>
+
+      <% end %>
+    </div>
 
 <% else %>
 
