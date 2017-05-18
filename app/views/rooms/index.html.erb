@@ -3,6 +3,32 @@
 <% if params[:category].blank? %>
 
     <hr>
+    <h1>Mejores Precios</h1>
+    <div class ="row">
+      <% @mejoresPrecios.each do |propiedad| %>
+          <div class = "col-md-3">
+            <a href="/rooms/<%=propiedad.id %>">
+              <%=image_tag propiedad.room_img.url(:room_index),class: "room" %>
+            </a>
+          </div>
+
+      <% end %>
+    </div>
+
+    <hr>
+    <h1>Más recientes</h1>
+    <div class ="row">
+      <% @recientes.each do |reciente| %>
+          <div class = "col-md-3">
+            <a href="/rooms/<%=reciente.id %>">
+              <%=image_tag reciente.room_img.url(:room_index),class: "room" %>
+            </a>
+          </div>
+
+      <% end %>
+    </div>
+
+    <hr>
     <h1>Cuarto</h1><div class ="row">
   <% @rooms1.each do |room1| %>
       <div class = "col-md-3">
@@ -38,19 +64,6 @@
           </div>
 
     <% end %>
-    </div>
-
-    <hr>
-    <h1>Mejores Precios</h1>
-    <div class ="row">
-      <% @mejoresPrecios.each do |propiedad| %>
-          <div class = "col-md-3">
-            <a href="/rooms/<%=propiedad.id %>">
-              <%=image_tag propiedad.room_img.url(:room_index),class: "room" %>
-            </a>
-          </div>
-
-      <% end %>
     </div>
 
 <% else %>

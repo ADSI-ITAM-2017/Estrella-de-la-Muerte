@@ -13,6 +13,7 @@ class RoomsController < ApplicationController
     @rooms2 = Room.where(:category_id=> 2).order("created_at DESC")
     @rooms3 = Room.where(:category_id=> 3).order("created_at DESC")
     @mejoresPrecios = Room.where('precio <= ?',30000).order("precio DESC")
+    @recientes = Room.where('created_at < ?', 1.seconds.ago)
   end
 
   def show

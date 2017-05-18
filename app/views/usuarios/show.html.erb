@@ -1,0 +1,12 @@
+<h1>Perfil del usuario</h1>
+
+<h3>Nombre: <%= @usuario.first_name %></h3>
+<h3>Apellido: <%= @usuario.last_name %></h3>
+<h3>Email: <%= @usuario.email %></h3>
+<h3>Teléfono: <%= @usuario.telefono %></h3>
+
+<div class="links btn-group">
+
+  <%= link_to "Regresar", root_path, class: "btn btn-custom"%>
+
+</div>
