@@ -8,7 +8,9 @@ class RoomsController < ApplicationController
       @category_id = Category.find_by(name: params[:category]).id
       @rooms = Room.where(:category_id=> @category_id).order("created_at DESC")
     end
-    @rooms2 = Room.where(:category_id=> 1).order("created_at DESC")
+    @rooms1 = Room.where(:category_id=> 1).order("created_at DESC")
+    @rooms2 = Room.where(:category_id=> 2).order("created_at DESC")
+    @rooms3 = Room.where(:category_id=> 3).order("created_at DESC")
   end
 
   def show

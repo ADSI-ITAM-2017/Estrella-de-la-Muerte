@@ -1,23 +1,33 @@
 <h1 class="current_category"><%= params[:category]%></h1>
-<% if @rooms.count==0 %>
-    <h2>No hay propiedades en esta categoría</h2>
+
+<% if params[:category].blank? %>
+
+    <hr>
+    <h1>Cuarto</h1>
+    <% @rooms1.each do |room1| %>
+        <h2><%=link_to room1.nombre, room_path(room1) %></h2>
+    <% end %>
+    <hr>
+    <h1>Departamento</h1>
+    <% @rooms2.each do |room2| %>
+        <h2><%=link_to room2.nombre, room_path(room2) %></h2>
+    <% end %>
+    <hr>
+    <h1>Casa</h1>
+    <% @rooms3.each do |room3| %>
+        <h2><%=link_to room3.nombre, room_path(room3) %></h2>
+    <% end %>
+
+
+
 <% else %>
-  <% @rooms.each do |room| %>
-      <h2><%=link_to room.nombre, room_path(room) %></h2>
-  <% end %>
-<% end %>
 
-
-
-<!--
-
-<% Category.all.each do |category| %>
-
-  <hr>
-  <h3><%= link_to category.name, rooms_path(category: category.name), class: "link" %></h3>
-  <% @rooms2.each do |room2| %>
-      <h2><%=link_to room2.nombre, room_path(room2) %></h2>
-  <% end %>
+    <% if @rooms.count==0 %>
+        <h2>No hay propiedades en esta categoría</h2>
+    <% else %>
+        <% @rooms.each do |room| %>
+            <h2><%=link_to room.nombre, room_path(room) %></h2>
+        <% end %>
+    <% end %>
 
 <% end %>
--->
