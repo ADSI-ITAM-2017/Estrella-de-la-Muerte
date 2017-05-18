@@ -1,13 +1,39 @@
-<h2><%= @room.nombre %> </h2>
-<% if usuario_signed_in? %>
+<div class = "row">
+
+<div class="col-md-4">
+
+
+<%= image_tag @room.room_img.url(:room_show), class: "room-show" %>
+
+</div>
+
+<div class="col-md-8">
+    <h2><%= @room.nombre %> </h2>
+    <% if usuario_signed_in? %>
     <% if @room.usuario_id == current_usuario.id %>
-        <h3><%= current_usuario.first_name %></h3>
+    <h3><%= current_usuario.first_name %></h3>
+
+
+
     <% end %>
 <% end %>
-<h4>Categoría: <%= @room.category.name %></h4>
+
 <h5><%= @room.descripcion %></h5>
 <p> <%= @room.ubicacion %> </p>
-<p><%= @room.reseña %></p>
+<p><%= @room.reseña %></p></div>
+</div>
+
+<div>
+
+  <div class = "row">
+    <div class = "col-md-4">
+
+      <!-- Rese;as y calificaciones -->
+
+    </div>
+
+</div>
+
 <%= link_to "Regresar", root_path%>
 
 <% if usuario_signed_in? %>

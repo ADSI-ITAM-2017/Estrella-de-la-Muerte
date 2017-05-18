@@ -3,21 +3,42 @@
 <% if params[:category].blank? %>
 
     <hr>
-    <h1>Cuarto</h1>
-    <% @rooms1.each do |room1| %>
-        <h2><%=link_to room1.nombre, room_path(room1) %></h2>
-    <% end %>
+    <h1>Cuarto</h1><div class ="row">
+  <% @rooms1.each do |room1| %>
+      <div class = "col-md-3">
+        <a href="/rooms/<%=room1.id %>">
+          <%=image_tag room1.room_img.url(:room_index),class: "room" %>
+        </a>
+      </div>
+
+  <% end %>
+</div>
+
     <hr>
     <h1>Departamento</h1>
-    <% @rooms2.each do |room2| %>
-        <h2><%=link_to room2.nombre, room_path(room2) %></h2>
-    <% end %>
+    <div class ="row">
+      <% @rooms2.each do |room2| %>
+          <div class = "col-md-3">
+            <a href="/rooms/<%=room2.id %>">
+              <%=image_tag room2.room_img.url(:room_index), class: "room" %>
+            </a>
+          </div>
+
+      <% end %>
+    </div>
+
     <hr>
     <h1>Casa</h1>
+    <div class ="row">
     <% @rooms3.each do |room3| %>
-        <h2><%=link_to room3.nombre, room_path(room3) %></h2>
-    <% end %>
+          <div class = "col-md-3">
+        <a href="/rooms/<%=room3.id %>">
+          <%=image_tag room3.room_img.url(:room_index),class: "room" %>
+        </a>
+          </div>
 
+    <% end %>
+    </div>
 
 
 <% else %>
@@ -25,9 +46,15 @@
     <% if @rooms.count==0 %>
         <h2>No hay propiedades en esta categoría</h2>
     <% else %>
+        <div class ="row">
         <% @rooms.each do |room| %>
-            <h2><%=link_to room.nombre, room_path(room) %></h2>
+            <div class = "col-md-3">
+            <a href="/rooms/<%=room.id %>">
+            <%=image_tag room.room_img.url(:room_index),class: "room" %>
+            </a>
+            </div>
         <% end %>
+        </div>
     <% end %>
 
 <% end %>
