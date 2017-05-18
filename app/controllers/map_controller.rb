@@ -1,2 +1,3 @@
 class MapController < ApplicationController
+
 end
