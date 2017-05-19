@@ -5,7 +5,28 @@
 
     <%= image_tag @room.room_img.url(:room_show), class: "room-show" %>
 
+    <br><br>
+
+    <div class="links btn-group">
+
+
+      <%= link_to "Regresar", root_path, class: "btn btn-custom"%>
+
+      <% if usuario_signed_in? %>
+
+          <% if @room.usuario_id == current_usuario.id %>
+
+              <%= link_to "Editar", edit_room_path(@room) , class: "btn btn-custom"%>
+              <%= link_to "Eliminar", room_path(@room), method: :delete, data: {confirm: "¿Seguro que deseas eliminar esta propiedad?"} , class: "btn btn-custom"%>
+
+          <% end %>
+
+      <% end %>
+    </div>
+
   </div>
+
+
 
   <div class="col-md-8">
 
@@ -31,30 +52,13 @@
     <div class = "reviews">
     <h1>Reseñas</h1>
       <%= render @room.reviews %>
-        <div>
+      <div>
         <%= link_to "Agregar reseña", new_room_review_path(@room), class: "btn-custom"%>
       </div>
     </div>
 
   </div>
 
-</div>
-
-<div class="links btn-group">
-
-  <br><br>
-<%= link_to "Regresar", root_path, class: "btn btn-custom"%>
-
-<% if usuario_signed_in? %>
-
-    <% if @room.usuario_id == current_usuario.id %>
-
-        <%= link_to "Editar", edit_room_path(@room) , class: "btn btn-custom"%>
-        <%= link_to "Eliminar", room_path(@room), method: :delete, data: {confirm: "¿Seguro que deseas eliminar esta propiedad?"} , class: "btn btn-custom"%>
-
-    <% end %>
-
-<% end %>
 </div>
 
 <script>

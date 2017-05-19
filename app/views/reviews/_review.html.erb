@@ -1,17 +1,17 @@
 <div class="review">
 
-    <div class="review-rating" data-score="<%= review.rating %>"></div>
-    <p class="review-comment"><%= review.comment %></p>
+  <div class="review-rating" data-score="<%= review.rating %>"></div>
+  <p class="review-comment"><%= review.comment %></p>
 
-    <% if usuario_signed_in? %>
+  <% if usuario_signed_in? %>
 
-        <%if review.usuario_id == current_usuario.id %>
-        <div class="links btn-group">
-        <%= link_to "Editar", edit_room_review_path(review.room, review) , class: "btn btn-custom"%>
-        <%= link_to "Eliminar", room_review_path(review.room, review), method: :delete, data: {
-            confirm: "¿Estás seguro de que quieres eliminar este comentario?"}, class: "btn btn-custom" %>
-        </div>
-            <% end %>
+      <%if review.usuario_id == current_usuario.id %>
+          <div class="links btn-group">
+            <%= link_to "Editar", edit_room_review_path(review.room, review) , class: "btn btn-custom"%>
+            <%= link_to "Eliminar", room_review_path(review.room, review), method: :delete, data: {
+                confirm: "¿Estás seguro de que quieres eliminar este comentario?"}, class: "btn btn-custom" %>
+          </div>
+      <% end %>
 
-    <% end %>
+  <% end %>
 </div>
