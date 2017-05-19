@@ -33,6 +33,7 @@
     <div class="room-info">
       <h2 class ="room-nombre"><%= @room.nombre %> </h2>
       <h3 class="room-propietario"><span>Propietario: </span><%= link_to "#{@usuario.first_name} " + "#{@usuario.last_name}", usuario_path(@usuario.id) %></h3>
+      <h3 class="room-propietario"><span>Precio: $<%= @room.precio %></span></h3>
       <h2 class="avg-rating"><label>Calificación promedio</label></h2>
       <div class="average-review-rating" data-score="<%= @average_review %>"></div>
       <span class="number-of-reviews">Basada en <%= @room.reviews.count %> reseñas</span>
